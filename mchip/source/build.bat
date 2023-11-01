@@ -1,0 +1,9 @@
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP init.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP bios.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP diskless.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP vtl2.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP edtasm.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP visual02.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP forth.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP rclisp.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DMCHIP rcbasic.asm
