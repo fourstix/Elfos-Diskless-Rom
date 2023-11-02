@@ -82,14 +82,13 @@ warm:      mov     r2,stack          ; set stack to low memory
            sex     r2
            lbr     f_initcall        ; setup SCALL and SRET
 main:      sep     scall             ; clear the screen
-           dw      f_inmsg
-           db      01bh,'[2J',0      ; ANSI erase display
+           dw      clrscr
            mov     rd,04b17h         ; set screen position
            sep     scall
            dw      gotoxy
            sep     scall             ; display version
            dw      f_inmsg
-           db      'v1.7',0
+           db      'v1.7.1',0
            mov     rd,02004h         ; set screen position
            sep     scall             ; set cursor position
            dw      gotoxy
@@ -206,44 +205,58 @@ main:      sep     scall             ; clear the screen
            ldn     rf                ; get input character
            smi     'E'               ; check for Elf/OS
            lbz     0ff00h            ; jump to boot routine
-
-
+           
 loop:      lbr     main
 
-option1:   ldi     0ch               ; form feed
-           sep     scall             ; clear the screen
-           dw      f_type
+
+option1:   sep     scall             ; clear the screen
+           dw      clrscr
            mov     r0,rcbasic        ; setup for call to Rc/Basic
            sep     r0                ; jump to Rc/Basic
 
-option2:   mov     r0,rcforth        ; setup for call to Rc/Forth
+option2:   sep     scall             ; clear the screen
+           dw      clrscr
+           
+           mov     r0,rcforth        ; setup for call to Rc/Forth
            sep     r0                ; jump to Rc/Forth
 
-option3:   mov     r0,rclisp         ; setup for call to Rc/Lisp
+option3:   sep     scall             ; clear the screen
+           dw      clrscr
+           
+           mov     r0,rclisp         ; setup for call to Rc/Lisp
            sep     r0                ; jump to Rc/Lisp
 
-option4:   mov     r0,edtasm         ; setup for call to EDTASM
+option4:   sep     scall             ; clear the screen
+           dw      clrscr
+           
+           mov     r0,edtasm         ; setup for call to EDTASM
            sep     r0                ; jump to EDTASM
 
-ovisual02: mov     r0,visual02       ; setup for call to Visual/02
+ovisual02: sep     scall             ; clear the screen
+           dw      clrscr
+           
+           mov     r0,visual02       ; setup for call to Visual/02
            sep     r0                ; jump to Visual/02
 
 #ifdef MCHIP
-ovtl2:     mov     r0,vtl2           ; setup for call to VTL2
+ovtl2:     sep     scall             ; clear the screen
+           dw      clrscr
+           
+           mov     r0,vtl2           ; setup for call to VTL2
            sep     r0                ; jump to VTL2
 #endif
            
-ominimon:  ldi     0ch               ; clear the screen
-           sep     scall
-           dw      f_type
+ominimon:  sep     scall             ; clear the screen
+           dw      clrscr
+           
 #ifdef MCHIP
            lbr     00913h
 #else
            lbr     0f913h            ; jump to BIOS minimon
 #endif
 
-dump:      ldi     0ch               ; clear the screen
-           sep     scall
+dump:      sep     scall             ; clear the screen
+           dw      clrscr
            dw      f_type
            sep     scall             ; display program message
            dw      f_inmsg
@@ -310,9 +323,8 @@ dump:      ldi     0ch               ; clear the screen
            dw      xclosew
            lbr     main
 
-load:      ldi     0ch               ; clear the screen
-           sep     scall
-           dw      f_type
+load:      sep     scall             ; clear the screen
+           dw      clrscr
            sep     scall             ; display program message
            dw      f_inmsg
            db      'Memory Load',10,13,10,13,'Press <enter> to start: ',0
@@ -342,6 +354,15 @@ load:      ldi     0ch               ; clear the screen
            sep     scall             ; close XMODEM channel
            dw      xcloser
            lbr     main              ; return to menu
+
+; *********************************************************
+; ***** Send ANSI command string to clear the screen  *****
+; *********************************************************
+clrscr:    sep     scall             
+           dw      f_inmsg
+           db      01bh,'[2J',0      ; ANSI erase display
+           sep     sret
+
 
 ; *********************************************************
 ; ***** Takes value in D and makes 2 char ascii in RF *****
