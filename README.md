@@ -23,13 +23,13 @@ The [1802 MemberCHIP Microcomputer Card](https://www.sunrise-ev.com/projects.htm
 ## Exit Commands
 <table>
 <tr><th>Program</th><th>Exit Command</th></tr>
-<tr><td>Rc/Basic L2</td><td>BYE</td><td>
-<tr><td>Rc/Forth</td><td>bye</td><td>
-<tr><td>Rc/Lisp</td><td>bye</td><td>
-<tr><td>EDTASM</td><td>q</td><td>
-<tr><td>VTL2</td><td>*=0</td><td>
-<tr><td>Visual/02</td><td>e</td><td>
-<tr><td>Minimon</td><td>/ or @7003</td><td>
+<tr><td>Rc/Basic L2</td><td>BYE</td></tr>
+<tr><td>Rc/Forth</td><td>bye</td></tr>
+<tr><td>Rc/Lisp</td><td>bye</td></tr>
+<tr><td>EDTASM</td><td>q</td></tr>
+<tr><td>VTL2</td><td>*=0</td></tr>
+<tr><td>Visual/02</td><td>e</td></tr>
+<tr><td>Minimon</td><td>/ or @0003</td></tr>
 </table>
 
 Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
@@ -53,12 +53,12 @@ The [Pico/Elf v2 Microcomputer](http://www.elf-emulation.com/picoelf.html) was d
 ## Exit Commands
 <table>
 <tr><th>Program</th><th>Exit Command</th></tr>
-<tr><td>Rc/Basic L2</td><td>BYE</td><td>
-<tr><td>Rc/Forth</td><td>bye</td><td>
-<tr><td>Rc/Lisp</td><td>bye</td><td>
-<tr><td>EDTASM</td><td>q</td><td>
-<tr><td>Visual/02</td><td>e</td><td>
-<tr><td>Minimon</td><td>/ or @8003</td><td>
+<tr><td>Rc/Basic L2</td><td>BYE</td></tr>
+<tr><td>Rc/Forth</td><td>bye</td></tr>
+<tr><td>Rc/Lisp</td><td>bye</td></tr>
+<tr><td>EDTASM</td><td>q</td></tr>
+<tr><td>Visual/02</td><td>e</td></tr>
+<tr><td>Minimon</td><td>/ or @0003</td></tr>
 </table>
 
 Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
