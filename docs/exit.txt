@@ -1,0 +1,9 @@
+1. Rc/Basic	bye
+2. Rc/Forth     bye
+3. Rc/Lisp      bye
+4. EDTASM       q
+5. VTL2         *=0
+6. Visual/02	e
+7. Minimon      /  or @0003
+8. Dump		(Ends after XModem transfer is completed)
+9. Load    	(Ends after XModem transfer is completed)
