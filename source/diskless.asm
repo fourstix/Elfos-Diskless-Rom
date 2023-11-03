@@ -88,7 +88,7 @@ main:      sep     scall             ; clear the screen
            dw      gotoxy
            sep     scall             ; display version
            dw      f_inmsg
-           db      'v1.7.1',0
+           db      'v1.7.2',0
            mov     rd,02004h         ; set screen position
            sep     scall             ; set cursor position
            dw      gotoxy
