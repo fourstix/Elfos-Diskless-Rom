@@ -1,3 +1,7 @@
+A visual monitor with breakpoints, traps and multi-instruction execution. 
+
+Commands:
+
 ?P              - Dump memory from R[P]
 ?X              - Dump memory from R[X]
 ?Rn             - Dump memory from R[n]
