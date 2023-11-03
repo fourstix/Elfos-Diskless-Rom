@@ -10,16 +10,29 @@ The [1802 MemberCHIP Microcomputer Card](https://www.sunrise-ev.com/projects.htm
 [![1802 MemberCHIP Microcomputer Card](https://www.sunrise-ev.com/photos/1802/1802me-assembled.jpg)](https://www.sunrise-ev.com/projects.htm#memberchip)]
 
 ## MemberChip Elf/OS ROM Program Menu:
-1. Rc/Basic L2
-2. Rc/Forth
-3. Rc/Lisp
-4. EDTASM
-5. VTL2
-6. Visual/02
-7. Minimon
+1. [Rc/Basic L2](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rcbasic.txt)
+2. [Rc/Forth](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rcforth.txt)
+3. [Rc/Lisp](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rclisp.txt)
+4. [EDTASM](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/edtasm.txt)
+5. [VTL2](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/vtl2.txt)
+6. [Visual/02](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/visual02.txt)
+7. [Minimon](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/minimon.txt)
 8. Dump Memory
 9. Load Memory
 
+## Exit Commands
+<table>
+<tr><th>Program</th><th>Exit Command</th></tr>
+<tr><td>Rc/Basic L2</td><td>BYE</td><td>
+<tr><td>Rc/Forth</td><td>bye</td><td>
+<tr><td>Rc/Lisp</td><td>bye</td><td>
+<tr><td>EDTASM</td><td>q</td><td>
+<tr><td>VTL2</td><td>*=0</td><td>
+<tr><td>Visual/02</td><td>e</td><td>
+<tr><td>Minimon</td><td>/ or @7003</td><td>
+</table>
+
+Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
 
 Pico/Elf v2 Microcomputer
 -------------------------
@@ -28,14 +41,27 @@ The [Pico/Elf v2 Microcomputer](http://www.elf-emulation.com/picoelf.html) was d
 [![Pico/Elf v2 Microcomputer](http://www.elf-emulation.com/picoelfbuild2.jpg)](http://www.elf-emulation.com/picoelf.html)]
 
 ## Pico/Elf Diskless ROM Programs:
-1. Rc/Basic L2
-2. Rc/Forth
-3. Rc/Lisp
-4. EDTASM
-5. Visual/02
-6. Minimon
+1. [Rc/Basic L2](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rcbasic.txt)
+2. [Rc/Forth](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rcforth.txt)
+3. [Rc/Lisp](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/rclisp.txt)
+4. [EDTASM](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/edtasm.txt)
+5. [Visual/02](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/visual02.txt)
+6. [Minimon](https://github.com/fourstix/Elfos-Diskless-Rom/blob/main/docs/minimon.txt)
 7. Dump Memory
 8. Load Memory
+
+## Exit Commands
+<table>
+<tr><th>Program</th><th>Exit Command</th></tr>
+<tr><td>Rc/Basic L2</td><td>BYE</td><td>
+<tr><td>Rc/Forth</td><td>bye</td><td>
+<tr><td>Rc/Lisp</td><td>bye</td><td>
+<tr><td>EDTASM</td><td>q</td><td>
+<tr><td>Visual/02</td><td>e</td><td>
+<tr><td>Minimon</td><td>/ or @8003</td><td>
+</table>
+
+Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
 
 Assembler
 ---------
@@ -124,6 +150,9 @@ Copyright (c) 2006-2023  by Lee A. Hart.
 
 The Pico/Elf v2 1802 Microcomputer hardware and software
 Copyright (c) 2004-2023 by Mike Riley.
+
+Asm/02 1802 Assembler
+Copyright (c) 2004-2023 by Mike Riley
 
 Elf/OS BIOS, EDTASM and Visual/02 Software
 Copyright (c) 2004-2023 by Mike Riley.
