@@ -59,16 +59,9 @@ Build the MChip Elf/OS Diskless ROM
     
 4. Copy all nine hex files into the mchip\\merge directory. 
   
-<<<<<<< HEAD
 5. Run the make_mchip.bat batch file to merge the hex files into the MChip Elf/OS Diskless ROM mchip.hex file. 
   * The file created will be named mchip.hex.
   * This file can be loaded into your PROM burner to create the ROM.
   * The file has an origin at $0000 and should be 32K in size when loaded.
-=======
-  5. Run the make_mchip.bat batch file to merge the hex files into the MChip Elf/OS Diskless ROM mchip.hex file. 
-    * The file created will be named mchip.hex. 
-    * This file can be loaded into your PROM burner to create the ROM. 
-    * The file has an origin at $0000 and should be 32K in size when loaded. 
->>>>>>> 2dec86f55f5d44d35a4e94db5cc2cb566bc87f9d
   
   
