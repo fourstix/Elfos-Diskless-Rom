@@ -16,7 +16,7 @@ Pre-Requisites
   * Create an include subdirectory underneath the mchip subdirectory.
   * Create a source subdirectory underneath the mchip subdirectory.
   * Create a merge subdirectory underneath the mchip subdirectory.
-  * The mchip subdirectory should now have three subdirectories underneath it named include, source and merge.
+  * The mchip subdirectory should now have three subdirectories underneath it named include, source and merge. 
   
 3. Download the code from the [Elfos-Diskless-Rom](https://github.com/fourstix/Elfos-Diskless-Rom) repository on GitHub.
   * Go to the [Elfos-Diskless-Rom](https://github.com/fourstix/Elfos-Diskless-Rom) repository on GitHub and click on the Green button labeled "<> Code".
@@ -60,8 +60,8 @@ Build the MChip Elf/OS Diskless ROM
   4. Copy all nine hex files into the mchip\\merge directory. 
   
   5. Run the make_mchip.bat batch file to merge the hex files into the MChip Elf/OS Diskless ROM mchip.hex file. 
-    * The file created will be named mchip.hex.
-    * This file can be loaded into your PROM burner to create the ROM.
-    * The file has an origin at $0000 and should be 32K in size when loaded.
+    * The file created will be named mchip.hex. 
+    * This file can be loaded into your PROM burner to create the ROM. 
+    * The file has an origin at $0000 and should be 32K in size when loaded. 
   
   
