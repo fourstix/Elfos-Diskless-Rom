@@ -27,6 +27,7 @@ Pre-Requisites
    
 4. Copy the 3 batch files to mchip\\source subdirectory. 
   * Copy the 3 batch files named clean.bat, mchip_hex.bat and mchip_build.bat from the temp\\Elfos-Diskless-Rom-main\\mchip\\build directory into the mchip\\source directory.
+  
 5. Edit the batch files in mchip\\source subdirectory to set the path to Asm02.exe.
   * Edit mchip_hex.bat and replace the text [Your_Path] with the actual path to the Asm02.exe file.
   * Edit mchip_build.bat and replace the text [Your_Path] with the actual path to the Asm02.exe file.
