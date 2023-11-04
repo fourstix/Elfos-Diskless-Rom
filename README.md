@@ -34,6 +34,9 @@ The [1802 MemberCHIP Microcomputer Card](https://www.sunrise-ev.com/projects.htm
 
 Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
 
+## Build Instructions
+Step by step instructions on how to build the MChip Elf/OS Diskless ROM are available [here.](MChipBuildSteps.md)
+
 Pico/Elf v2 Microcomputer
 -------------------------
 The [Pico/Elf v2 Microcomputer](http://www.elf-emulation.com/picoelf.html) was designed by Mike Riley. Information about the Pico/Elf v2 Microcomputer is available on the [Elf-Emulation website](http://www.elf-emulation.com/) and an archive of his website is [available on Github.](https://github.com/rileym65/Website-ElfEmulation)
@@ -63,9 +66,12 @@ The [Pico/Elf v2 Microcomputer](http://www.elf-emulation.com/picoelf.html) was d
 
 Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
 
+## Build Instructions
+Step by step instructions on how to build the MChip Elf/OS Diskless ROM are available [here.](PicoBuildSteps.md)
+
 Assembler
 ---------
-The source programs are assembled into hex files with an updated versions of the Asm/02 assembler written by Mike Riley with updates by Tony Hefner. The updated version required to assemble this code is available at [arhefner/Asm-02](https://github.com/arhefner/Asm-02).
+The source programs are assembled into hex files with an updated versions of the Asm/02 assembler written by Mike Riley with updates by Tony Hefner. The updated version required to assemble this code is available at the [Asm-02 repository](https://github.com/fourstix/Asm-02) on GitHub.
 
 Common Programs
 ---------------
