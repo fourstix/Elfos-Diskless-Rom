@@ -35,7 +35,7 @@ The [1802 MemberCHIP Microcomputer Card](https://www.sunrise-ev.com/projects.htm
 Note: The Dump Memory and Load Memory commands end after the XModem transfer is complete.
 
 ## Build Instructions
-Step by step instructions on how to build the MChip Elf/OS Diskless ROM are available [here.](MChipBuildSteps.md)
+[Step by step instructions](MChipBuildSteps.md) on how to build the MChip Elf/OS Diskless ROM are available [here.](MChipBuildSteps.md)
 
 ## MemberChip Elf/OS ROM Memory Map
 <table>
