@@ -5,3 +5,4 @@
 [Your_Path]\Asm02\asm02.exe -i -L -s -DPICOROM forth.asm
 [Your_Path]\Asm02\asm02.exe -i -L -s -DPICOROM rclisp.asm
 [Your_Path]\Asm02\asm02.exe -i -L -s -DPICOROM rcbasic.asm
+[Your_Path]\Asm02\asm02.exe -i -L -s -DPICOROM vtl2.asm

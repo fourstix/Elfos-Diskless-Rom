@@ -57,7 +57,7 @@ Build the MChip Elf/OS Diskless ROM
   * The mchip_build.bat will create all the hex files from the source.
   * An individual hex file can be created by using the mchip_hex.bat batch file and passing it the name of the assembly file.  For example, the command *mchip_hex bios.asm* should create the bios.hex file.  
     
-4. Copy all nine hex files into the mchip\\merge directory. 
+4. Copy all the hex files into the mchip\\merge directory. 
   
 5. Run the make_mchip.bat batch file to merge the hex files into the MChip Elf/OS Diskless ROM mchip.hex file. 
   * The file created will be named mchip.hex.
