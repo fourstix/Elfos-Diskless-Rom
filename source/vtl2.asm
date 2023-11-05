@@ -14,6 +14,7 @@
 #include    ../include/bios.inc
 
 #ifdef MCHIP
+#define    ANYROM
 #define    CODE   07800h
 o_inmsg:   equ    f_inmsg
 o_input:   equ    f_input
@@ -25,6 +26,21 @@ xread:     equ    0700ch
 xwrite:    equ    0700fh
 xclosew:   equ    07012h
 xcloser:   equ    07015h
+#endif
+
+#ifdef PICOROM
+#define    ANYROM
+#define    CODE   08800h
+o_inmsg:   equ    f_inmsg
+o_input:   equ    f_input
+o_type:    equ    f_type
+o_readkey: equ    f_read
+xopenw:    equ     08006h
+xopenr:    equ     08009h
+xread:     equ     0800ch
+xwrite:    equ     0800fh
+xclosew:   equ     08012h
+xcloser:   equ     08015h
 #endif
 
 #ifdef DLOAD
@@ -72,7 +88,7 @@ xcloser:   equ    08015h
            lbr     f_initcall
 #endif
 
-#ifdef MCHIP
+#ifdef ANYROM
            org     CODE
            mov     r2,stack
            mov     r6,start
@@ -154,7 +170,7 @@ lenlp:     inc     rc           ; increment count
            rtn                  ; then return to caller
 
 start:
-#ifdef MCHIP
+#ifdef ANYROM
            sep     scall             ; clear the screen
            dw      f_inmsg
            db      01bh,'[2J',0      ; ANSI erase display
@@ -175,6 +191,10 @@ new:       mov     rf,07dffh           ; set end of memory pointer
 #ifdef MCHIP
 new:       mov     rf,0fdffh           ; set end of memory pointer
 #endif
+#ifdef PICOROM
+new:       mov     rf,07dffh           ; set end of memory pointer
+#endif
+
            ldi     '*'                 ; need * variable
            call    store
 
@@ -784,7 +804,7 @@ save:      inc     r8           ; move past symbol
 #ifdef DLOAD
            call    xopenw
 #endif
-#ifdef MCHIP
+#ifdef ANYROM
            call    xopenw
 #endif
            ldi     '&'          ; need last program address
@@ -806,7 +826,7 @@ save:      inc     r8           ; move past symbol
            call    xwrite
            call    xclosew
 #endif
-#ifdef MCHIP
+#ifdef ANYROM
            call    xwrite
            call    xclosew
 #endif
@@ -824,7 +844,7 @@ load:      inc     r8           ; move past symbol
 #ifdef DLOAD
            call    xopenr
 #endif
-#ifdef MCHIP
+#ifdef ANYROM
            call    xopenr
 #endif
            mov     rc,32767     ; read as many bytes as possible
@@ -838,7 +858,7 @@ load:      inc     r8           ; move past symbol
            call    xread
            call    xcloser
 #endif
-#ifdef MCHIP
+#ifdef ANYROM
            call    xread
            call    xcloser
 #endif
@@ -1214,6 +1234,10 @@ store_s:   glo     rf                  ; check for zero
 #ifdef MCHIP
            lbr     07003h
 #endif
+#ifdef PICOROM
+           lbr     08003h
+#endif
+
 store_n:   glo     rf                  ; check for zero
            lbnz    store_n1            ; jump if not
            ghi     rf
@@ -1375,6 +1399,10 @@ endrom:    equ     $
 
 #ifdef MCHIP
            org     08100h
+#endif
+
+#ifdef PICOROM
+           org     00100h
 #endif
 
 buffer:    ds      130

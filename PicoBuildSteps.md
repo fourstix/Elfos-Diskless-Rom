@@ -49,7 +49,7 @@ Build the Pico/Elf Diskless ROM
 1. Copy source files to pico\\source subdirectory
   * Copy all nine assembly files from temp\\Elfos-Diskless-Rom-main\\source directory to the pico\\source directory.
   * It's not necessary to copy the tools subdirectory or any files in it.
-  * The init.asm and vtl2.asm files are not used and can be deleted, if you wish. 
+  * The init.asm file is not used to build the Pico/Elf Diskless ROM and can be deleted, if you wish. 
   
 2. Copy the include files to the pico\\include subdirectory. 
   * Copy the bios.inc, ops.inc and opscode.inc files from temp\\Elfos-Diskless-Rom-main\\include directory to the pico\\include directory.
@@ -58,7 +58,7 @@ Build the Pico/Elf Diskless ROM
 3. Run the pico_build.bat batch file in the pico\\source directory. 
   * An individual hex file can be created by using the pico_hex.bat batch file and passing it the name of the assembly file.  For example, the command *pico_hex bios.asm* should create the bios.hex file.  
     
-4. Copy all seven hex files into the pico\\merge directory. 
+4. Copy all the hex files into the pico\\merge directory. 
   
 5. Run the make_pico.bat batch file to merge the hex files into the Pico/Elf Diskless ROM pico.hex file. 
   * The file created will be named pico.hex.

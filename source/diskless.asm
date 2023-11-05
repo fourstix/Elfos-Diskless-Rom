@@ -26,6 +26,7 @@ rcforth:   equ     0a000h            ; address for rcforth
 edtasm:    equ     0b000h            ; address for edtasm
 rcbasic:   equ     0c000h            ; address for rcbasic
 visual02:  equ     0e000h            ; address of Visual/02
+vtl2:      equ     08800h            ; address for vtl2
 base:      equ     07f00h            ; XMODEM data segment
 stack:     equ     001ffh            ; stack
 #endif
@@ -88,13 +89,17 @@ main:      sep     scall             ; clear the screen
            dw      gotoxy
            sep     scall             ; display version
            dw      f_inmsg
-           db      'v1.7.2',0
+           db      'v1.7.3',0
            mov     rd,02004h         ; set screen position
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display banner
            dw      f_inmsg
+#ifdef MCHIP
            db      'MemberCHIP',0
+#else
+           db      'Pico/Elf',0
+#endif           
            mov     rd,02006h         ; set position
            sep     scall             ; set cursor position
            dw      gotoxy
@@ -119,54 +124,36 @@ main:      sep     scall             ; clear the screen
            sep     scall             ; display menu item
            dw      f_inmsg
            db      '4. EDTASM',0
-#ifdef MCHIP
            inc     rd                ; next row
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display menu item
            dw      f_inmsg
            db      '5. VTL2',0
-#endif
            inc     rd                ; next row
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display menu item
            dw      f_inmsg
-#ifdef MCHIP
            db      '6. Visual/02',0
-#else
-           db      '5. Visual/02',0
-#endif
            inc     rd                ; next row
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display menu item
            dw      f_inmsg
-#ifdef MCHIP
            db      '7. Minimon',0
-#else
-           db      '6. Minimon',0
-#endif
            inc     rd                ; next row
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display menu item
            dw      f_inmsg
-#ifdef MCHIP
            db      '8. Dump Memory',0
-#else
-           db      '7. Dump Memory',0
-#endif
            inc     rd                ; next row
            sep     scall             ; set cursor position
            dw      gotoxy
            sep     scall             ; display menu item
            dw      f_inmsg
-#ifdef MCHIP
            db      '9. Load Memory',0
-#else
-           db      '8. Load Memory',0
-#endif
            inc     rd                ; next row
            inc     rd                ; next row
            ghi     rd                ; get x
@@ -190,10 +177,8 @@ main:      sep     scall             ; clear the screen
            lbz     option3           ; jump if so
            smi     1                 ; check for EDTASM
            lbz     option4           ; jump if so
-#ifdef MCHIP
            smi     1                 ; check for VTL2
            lbz     ovtl2             ; jump if so
-#endif
            smi     1                 ; check for Visual/02
            lbz     ovisual02         ; jump if so
            smi     1                 ; check for Minimon
@@ -238,13 +223,11 @@ ovisual02: sep     scall             ; clear the screen
            mov     r0,visual02       ; setup for call to Visual/02
            sep     r0                ; jump to Visual/02
 
-#ifdef MCHIP
 ovtl2:     sep     scall             ; clear the screen
            dw      clrscr
            
            mov     r0,vtl2           ; setup for call to VTL2
            sep     r0                ; jump to VTL2
-#endif
            
 ominimon:  sep     scall             ; clear the screen
            dw      clrscr
@@ -845,7 +828,7 @@ recvret:   shr
 #ifdef MCHIP
            org     7600h
 #else
-           org     8700h
+           org     8600h
 #endif
 readblk:   push    rc                 ; save consumed registers
            push    ra
@@ -946,7 +929,7 @@ delay1:    dec     re                  ; decrement counter
 #ifdef MCHIP
            org     7700h
 #else
-           org     8800h
+           org     8700h
 #endif
 
 ; *******************************************************
